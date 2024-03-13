@@ -47,7 +47,7 @@ export class SigninComponent implements OnInit {
           this.router.navigate(['/customer', customerId]);
         },
         error => {
-          this.errorMessage = 'Error occurred while signing in';
+          alert("Invalid Username or Password");
           console.error('Error occurred:', error);
         }
       );

@@ -20,7 +20,7 @@ export class ApplyLoanComponent implements OnInit {
   ngOnInit(): void {
     this.accountId = this.route.snapshot.params['accountId'];
     this.loanType = this.route.snapshot.params['loanType'];
-    this.objservice.loanData.loanType = 'home';
+    this.objservice.loanData.loanType = this.loanType;
     this.fixedInterestRate = this.getInterestRate(this.objservice.loanData.loanType);
     this.objservice.loanData.loanStatus = 'PENDING';
     console.log("Loan Status:", this.objservice.loanData.loanStatus);
@@ -93,7 +93,7 @@ export class ApplyLoanComponent implements OnInit {
   getInterestRate(loanType: string): string {
     switch (loanType) {
       case 'home':
-        return '6';
+        return '6.5';
       case 'education':
         return '7';
       case 'car':

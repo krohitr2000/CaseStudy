@@ -18,7 +18,7 @@ th, td {
 }
 
 .approve-button {
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50; 
   color: white;
 }
 
@@ -27,7 +27,7 @@ th, td {
 }
 
 .disapprove-button {
-  background-color: #f44336; /* Red */
+  background-color: #f44336; 
   color: white;
 }
 
@@ -73,10 +73,10 @@ th, td {
 }
 
 .third-box {
-  display: none; /* Corrected class name */
+  display: none; 
 }
 
-.third-outer-box:hover .third-box { /* Corrected class name */
+.third-outer-box:hover .third-box { 
   display: block;
 }
 
@@ -138,11 +138,3 @@ table {
   color: black;
   
 }
-
-/* .back{
-  background-image: url(/../assets/Images/homeback.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100vw 100vh;
-  height: 100vh;
-} */

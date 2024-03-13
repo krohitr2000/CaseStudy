@@ -34,6 +34,7 @@ export class ConfirmPasswordComponent {
           console.log(customer);
           customer.password = this.confirmPassword;
           this.service.updatecustomer(this.customerId, customer).subscribe();
+          alert("Password updated successfully")
           this.router.navigate(["/signin"])
         }
         );

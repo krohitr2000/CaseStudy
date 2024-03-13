@@ -10,13 +10,12 @@ import { CustomersModel } from '../customer/CustomerModel';
   styleUrls: ['./forgot-password.component.css']
 })
 export class ForgotPasswordComponent implements OnInit {
-  model: any = {}; // Object to hold form data
+  model: any = {}; 
   constructor(private http: HttpClient, private service: SeriveService, private route: Router) {}
 
   ngOnInit(): void {}
 
   onSubmit(): void {
-    // Form submission logic
     this.service.verify(this.model).subscribe(
       (res: CustomersModel) => {
         let customerId = res.customerId;
@@ -25,7 +24,6 @@ export class ForgotPasswordComponent implements OnInit {
       (error) => {
         alert("Invalid Details");
         window.location.reload();
-        // Handle error
       }
     );
   }

@@ -6,6 +6,6 @@ export class Loan {
     loanStatus:string;
     interestRate:string;
     tenure:number;
-    approvalDate:Date |null;
+    approvalDate:Date|null;
     disbursementDate:Date |null;
 }

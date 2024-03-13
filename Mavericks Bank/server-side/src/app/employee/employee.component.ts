@@ -106,6 +106,8 @@ export class EmployeeComponent {
       this.http.get<LoanDetails>("http://localhost:5126/api/Loans/"+loanId).subscribe(
         res=>{
           res.loanStatus = "Approved";
+          res.approvalDate=new Date();
+          res.disbursementDate=new Date();
           this.http.put("http://localhost:5126/api/Loans/"+loanId, res).subscribe(
             res=>this.refreshPage()
           );

@@ -63,6 +63,7 @@ export class TransactionComponent {
         window.location.reload();
       },
       (err)=> {
+        alert("Transaction unsuccessful !!!");
         console.log(err);
       }
     )
@@ -76,6 +77,7 @@ export class TransactionComponent {
         window.location.reload();
       },
       (err)=> {
+        alert("Transaction unsuccessful !!!");
         console.log(err);
       }
     )
@@ -90,6 +92,7 @@ export class TransactionComponent {
         window.location.reload();
       },
       (err)=> {
+        alert("Transaction unsuccessful !!!");
         console.log(err);
       }
     )

@@ -29,7 +29,7 @@ export class RegisterComponent {
 
   onSubmit(form: NgForm): void {
     this.insertRecord(form);
-    this.router.navigate([`/customer/${this.customerId}`]);
+    this.router.navigate(['/customer',this.customerId]);
   }
 
   insertRecord(form: NgForm): void {

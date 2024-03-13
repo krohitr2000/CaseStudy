@@ -22,7 +22,7 @@ export class PendingAccountsComponent implements OnInit {
     this.customerId = this.route.snapshot.params['customerId'];
     this.srv.accountList(this.customerId).subscribe(
       (res)=>
-      this.pendingList = res.filter(account => account.status !== 'disapproved')
+      this.pendingList = res.filter(account => account.status === 'PENDING')
     );
   }
   authenticate() {

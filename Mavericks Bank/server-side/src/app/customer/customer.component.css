@@ -59,6 +59,8 @@
     font-family: helvetica;
   }
   .backgrond-setter{
+    margin-top: -1.5rem;
+    padding-top: 1rem;
     background-image: url(/../assets/Images/background1.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
