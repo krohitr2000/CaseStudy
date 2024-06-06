@@ -62,6 +62,7 @@ body {
     margin-top: 0px;
   }
   .name{
+    color: white;
     margin-bottom: -1rem;
   }
   
@@ -85,3 +86,7 @@ body {
   a{
     text-decoration: none;
   }
+  .logout-link {
+    color: red !important;
+  }
+  

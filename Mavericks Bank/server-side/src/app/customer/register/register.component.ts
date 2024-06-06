@@ -12,6 +12,7 @@ import { TokenvalidationService } from '../signin/tokenvalidation.service';
 export class RegisterComponent {
   customerId: number = undefined;
   emailMessage: string = ''; 
+  type: string = 'customer';
 
   constructor(public objservice: SeriveService, private router: Router, private tokenService: TokenvalidationService) {}
 

@@ -17,3 +17,9 @@ th {
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
+h3{
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Times New Roman';
+}

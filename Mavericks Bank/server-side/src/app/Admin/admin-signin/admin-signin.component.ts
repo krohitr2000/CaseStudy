@@ -43,7 +43,7 @@ export class AdminSigninComponent {
           const adminId = response.adminId;
           alert('Login successful');
           const token = response.token;
-          this.tokenService.setToken(token);
+          this.tokenService.setAdminToken(token);
           console.log('Navigating to customer page');
           console.log(this.adminId);
           console.log(response);

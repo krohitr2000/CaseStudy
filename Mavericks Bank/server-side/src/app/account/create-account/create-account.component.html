@@ -1,4 +1,7 @@
 <div class="backgrond-setter" *ngIf="authenticate()">
+    <button type="button" class="btn btn-secondary" (click)="navigateToCustomerPage()">
+        <i class="fa fa-arrow-left"></i> Back to Customer Page
+      </button>
 <h2>New Account</h2>
 <form class="account-form" #accountForm="ngForm" (ngSubmit)="onSubmit(accountForm)">
     <input type="hidden" name="Id" [value]="objservice.accountData.accountId">

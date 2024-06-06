@@ -59,6 +59,25 @@ namespace MavericksBank.Controllers
                 return BadRequest();
             }
 
+            // Assuming loan status is being updated through this method
+            // Check if the loan status is being changed to 'Approved'
+            if (loan.LoanStatus == "Approved")
+            {
+                // Retrieve the account associated with the loan
+                var account = await _context.Accounts.FindAsync(loan.AccountId);
+
+                if (account == null)
+                {
+                    return Problem("Account not found.");
+                }
+
+                // Add the loan amount to the account balance
+                account.Balance += loan.LoanAmount;
+
+                // Update the account balance in the database
+                _context.Entry(account).State = EntityState.Modified;
+            }
+
             _context.Entry(loan).State = EntityState.Modified;
 
             try
@@ -79,6 +98,7 @@ namespace MavericksBank.Controllers
 
             return NoContent();
         }
+
 
         // POST: api/Loans
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754

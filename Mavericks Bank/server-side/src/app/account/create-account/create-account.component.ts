@@ -60,5 +60,9 @@ authenticate() {
   this.router.navigate(['/signin']);
   return false;
 }
+navigateToCustomerPage()
+{
+  
+}
 
 }

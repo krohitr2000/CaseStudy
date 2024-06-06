@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EmployeeService } from '../employee.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { TokenvalidationService } from '../../customer/signin/tokenvalidation.service';
 
 
 @Component({
@@ -19,7 +20,8 @@ export class EmpsigninComponent {
   constructor(
     private formBuilder: FormBuilder,
     private empsigninService: EmployeeService,
-    private router: Router
+    private router: Router,
+    private tokenService: TokenvalidationService
   ) {}
 
   ngOnInit(): void {
@@ -38,10 +40,9 @@ export class EmpsigninComponent {
         (response: any) => {
           console.log(response);
           const employeeId = response.employee.employeeId;
+          const token = response.token;
           alert('Login successful');
-          console.log('Navigating to customer page');
-          console.log(this.employeeId);
-          console.log(response);
+          this.tokenService.setEmployeeToken(token);
           this.router.navigate(['/employee', employeeId]);
         },
         error => {

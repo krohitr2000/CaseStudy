@@ -8,6 +8,7 @@ import { HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class TokenvalidationService {
+  userType:string = 'user';
   constructor(private router:Router){}
 
   getToken() {
@@ -16,9 +17,11 @@ export class TokenvalidationService {
   setToken(token) {
     console.log(token);
     localStorage.setItem("jwt", token);
+    localStorage.setItem("user-type","customer");
   }
   removeToken(){
     localStorage.removeItem("jwt");
+    localStorage.removeItem("user-type");
   }
 
   getHttpOptions() {
@@ -38,5 +41,45 @@ export class TokenvalidationService {
       };
     }
   }
+
+  getEmployeeToken(): string {
+    return localStorage.getItem("employeeToken");
+  }
+
+  setEmployeeToken(token: string): void {
+    localStorage.setItem("employeeToken", token);
+    localStorage.setItem("user-type","employee");
+  }
+
+  removeEmployeeToken(): void {
+    localStorage.removeItem("employeeToken");
+    localStorage.removeItem("user-type");
+  }
+
+  getAdminToken(): string {
+    return localStorage.getItem("adminToken");
+  }
+
+  setAdminToken(token: string): void {
+    localStorage.setItem("adminToken", token);
+    localStorage.setItem("user-type","admin");
+  }
+
+  removeAdminToken(): void {
+    localStorage.removeItem("adminToken");
+    localStorage.removeItem("user-type");
+  }
+
+   getUserType() {
+    // Retrieve user type from local storage
+    const userType = localStorage.getItem('user-type');
+
+    // Check if user type is found in local storage
+    if (userType) {
+        return userType; // Return user type if found
+    } else {
+        return "user"; // Return "User" if user type is not found
+    }
+}
 
 }

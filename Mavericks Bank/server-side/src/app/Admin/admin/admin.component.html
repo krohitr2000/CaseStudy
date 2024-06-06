@@ -1,29 +1,92 @@
-<body>
-  <h3>Add New Employee</h3>
-  <p>Fill details of new employee</p>
-  <div class="form-container">
-      <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
-          <div class="form-group">
-              <label for="username">Username:</label>
-              <input type="text" formControlName="username" placeholder="Enter username">
-          </div>
-          <div class="form-group">
-              <label for="name">Name:</label>
-              <input type="text" formControlName="name" placeholder="Enter name">
-          </div>
-          <div class="form-group">
-              <label for="email">Email:</label>
-              <input type="email" formControlName="email" placeholder="Enter email">
-          </div>
-          <div class="form-group">
-              <label for="phone">Phone:</label>
-              <input type="text" formControlName="phone" placeholder="Enter number">
-          </div>
-          <div class="form-group">
-              <label for="password">Password:</label>
-              <input type="password" formControlName="password" placeholder="Enter password">
-          </div>
-          <button type="submit" [disabled]="!employeeForm.valid">Add Employee</button>
-      </form>
-  </div>
-</body>
+<div class="backgrond-setter">
+    <h3 style="color: white; font-family: 'Times New Roman'; text-align: center; margin-top: 3rem; margin-bottom: 2rem;">Admin Workspace</h3>
+
+    <!-- Add Employee Form Section -->
+    <div class="outer-box">
+        <input type="checkbox" [(ngModel)]="showAddEmployeePanel" class="check"> Show Add Employee Form
+        <div *ngIf="showAddEmployeePanel" class="form-container">
+            <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="employee-form">
+                <div class="form-group">
+                    <label for="username" class="form-label">Username:</label>
+                    <input type="text" formControlName="username" placeholder="Enter username" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" formControlName="name" placeholder="Enter name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" formControlName="email" placeholder="Enter email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="form-label">Phone:</label>
+                    <input type="text" formControlName="phone" placeholder="Enter number" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label">Password:</label>
+                    <input type="password" formControlName="password" placeholder="Enter password" class="form-control">
+                </div>
+                <button type="submit" [disabled]="!employeeForm.valid" class="btn-submit">Add Employee</button>
+            </form>
+        </div>
+    </div>
+    
+
+    <!-- Transaction History Section -->
+    <div class="outer-box">
+        <input type="checkbox" [(ngModel)]="showTransactionHistoryPanel" class="check"> Show Transaction History
+        <div *ngIf="showTransactionHistoryPanel" class="table-container">
+            <div class="box-header">
+                <h2>Transaction History</h2>
+            </div>
+            <div class="table-box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>Sender ID</th>
+                            <th>Receiver ID</th>
+                            <th>Transaction Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let transaction of transactions">
+                            <td>{{ transaction.transactionId }}</td>
+                            <td>{{ transaction.senderAccountId }}</td>
+                            <td>{{ transaction.recieverAccountId }}</td>
+                            <td>{{ transaction.transactionType }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Account Details Section -->
+    <div class="outer-box">
+        <input type="checkbox" [(ngModel)]="showAccountDetailsPanel" class="check"> Show Account Details
+        <div *ngIf="showAccountDetailsPanel" class="table-container">
+            <div class="box-header">
+                <h2>All Accounts</h2>
+            </div>
+            <div class="table-box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Account ID</th>
+                            <th>Account Type</th>
+                            <th>Customer ID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let account of accounts">
+                            <td>{{ account.accountId }}</td>
+                            <td>{{ account.accountType }}</td>
+                            <td>{{ account.customerId }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

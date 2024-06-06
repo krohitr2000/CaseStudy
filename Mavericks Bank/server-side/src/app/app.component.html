@@ -1,11 +1,11 @@
-<nav class=" navbar navbar-expand-lg " style="background-color: white; padding-bottom: 1rem;">
+<nav class=" navbar navbar-expand-lg " style="background-color: rgb(0, 0, 0); padding-bottom: 1rem;">
   <a class="navbar-brand text-dark" [routerLink]="['/']" style="position: absolute; top: -5%;left: 0%;">
     <img src="../assets/Images/Banklogo.png" alt="Mavericks Bank Logo" style="height: 86px;">
   </a>
   <div class="container-fluid mt-3" >
 
-    <div class="brand-name" style="margin-left: 10rem;">
-      <h2 [routerLink]="['/']">Mavericks Bank</h2>
+    <div class="brand-name text-light" style="margin-left: 10rem;">
+      <h2 [routerLink]="['/']" class="text-white">Mavericks Bank</h2>
     </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,40 +15,53 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active text-dark" aria-current="page" style="font-size: 18px; font-family: 'Times New Roman';" [routerLink]="['/']">Home</a>
+          <a class="nav-link active text-white"aria-current="page" style="font-size: 18px; font-family: 'Times New Roman';" [routerLink]="['/']">Home</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link active text-dark" style="font-size: 18px; font-family: 'Times New Roman';" [routerLink]="['/aboutus']">About Us</a>
+          <a class="nav-link active text-white" style="font-size: 18px; font-family: 'Times New Roman';" [routerLink]="['/aboutus']">About Us</a>
         </li>
 
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle active text-dark" style="font-size: 18px; font-family: 'Times New Roman';" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-menu-down"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item text-dark" [routerLink]="['/create-account']">Create Account</a></li>
+          </ul>
+        </li> -->
+
+        <li *ngIf="getType()=='user' || getType() == 'customer'" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active text-white" style="font-size: 18px; font-family: 'Times New Roman';" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Customer
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item text-dark" [routerLink]="['/signin']">Sign In</a></li>
-            <li><a class="dropdown-item text-dark" [routerLink]="['/signup']">Sign Up</a></li>
+            <li *ngIf="!isAuthenticated()"><a class="dropdown-item text-white" [routerLink]="['/signin']">Sign In</a></li>
+            <li *ngIf="!isAuthenticated()"><a class="dropdown-item text-white" [routerLink]="['/signup']">Sign Up</a></li>
+            <li *ngIf="isAuthenticated()"><a class="dropdown-item text-white logout-link" (click)="logout()">LogOut</a></li>
           </ul>
         </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle active text-black" style="font-size: 18px; font-family: 'Times New Roman';" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li *ngIf="getType()=='user' || getType() == 'employee'" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active text-white" style="font-size: 18px; font-family: 'Times New Roman';" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Employee
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item text-dark" [routerLink]="['/empsignin']">Sign In</a></li>
+            <li *ngIf="!isEmployeeAuthenticated()"><a class="dropdown-item text-white" [routerLink]="['/empsignin']">Sign In</a></li>
+            <li *ngIf="isEmployeeAuthenticated()"><a class="dropdown-item text-white logout-link" (click)="logoutEmployee()">LogOut</a></li>
           </ul>
         </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle active text-dark" style="font-size: 18px; font-family: 'Times New Roman';" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li *ngIf="getType()=='user' || getType() == 'admin'" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active text-white" style="font-size: 18px; font-family: 'Times New Roman';" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Admin
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item text-dark" [routerLink]="['/admin-signin']">Sign In</a></li>
+            <li *ngIf="!isAdminAuthenticated()"><a class="dropdown-item text-white" [routerLink]="['/admin-signin']">Sign In</a></li>
+            <li *ngIf="isAdminAuthenticated()"><a class="dropdown-item text-white logout-link" (click)="logoutAdmin()">LogOut</a></li>
           </ul>
         </li>
+        
       </ul>
     </div>
   </div>
