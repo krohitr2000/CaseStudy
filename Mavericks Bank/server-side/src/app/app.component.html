@@ -36,9 +36,9 @@
             Customer
           </a>
           <ul class="dropdown-menu">
-            <li *ngIf="!isAuthenticated()"><a class="dropdown-item text-white" [routerLink]="['/signin']">Sign In</a></li>
-            <li *ngIf="!isAuthenticated()"><a class="dropdown-item text-white" [routerLink]="['/signup']">Sign Up</a></li>
-            <li *ngIf="isAuthenticated()"><a class="dropdown-item text-white logout-link" (click)="logout()">LogOut</a></li>
+            <li *ngIf="!isAuthenticated()"><a class="dropdown-item text-black" [routerLink]="['/signin']">Sign In</a></li>
+            <li *ngIf="!isAuthenticated()"><a class="dropdown-item text-black" [routerLink]="['/signup']">Sign Up</a></li>
+            <li *ngIf="isAuthenticated()"><a class="dropdown-item text-black logout-link" (click)="logout()">LogOut</a></li>
           </ul>
         </li>
 
@@ -47,8 +47,8 @@
             Employee
           </a>
           <ul class="dropdown-menu">
-            <li *ngIf="!isEmployeeAuthenticated()"><a class="dropdown-item text-white" [routerLink]="['/empsignin']">Sign In</a></li>
-            <li *ngIf="isEmployeeAuthenticated()"><a class="dropdown-item text-white logout-link" (click)="logoutEmployee()">LogOut</a></li>
+            <li *ngIf="!isEmployeeAuthenticated()"><a class="dropdown-item text-black" [routerLink]="['/empsignin']">Sign In</a></li>
+            <li *ngIf="isEmployeeAuthenticated()"><a class="dropdown-item text-black logout-link" (click)="logoutEmployee()">LogOut</a></li>
           </ul>
         </li>
 
@@ -57,8 +57,8 @@
             Admin
           </a>
           <ul class="dropdown-menu">
-            <li *ngIf="!isAdminAuthenticated()"><a class="dropdown-item text-white" [routerLink]="['/admin-signin']">Sign In</a></li>
-            <li *ngIf="isAdminAuthenticated()"><a class="dropdown-item text-white logout-link" (click)="logoutAdmin()">LogOut</a></li>
+            <li *ngIf="!isAdminAuthenticated()"><a class="dropdown-item text-black" [routerLink]="['/admin-signin']">Sign In</a></li>
+            <li *ngIf="isAdminAuthenticated()"><a class="dropdown-item text-black logout-link" (click)="logoutAdmin()">LogOut</a></li>
           </ul>
         </li>
         

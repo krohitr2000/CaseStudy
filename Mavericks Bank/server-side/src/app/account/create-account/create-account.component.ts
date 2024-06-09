@@ -15,7 +15,13 @@ export class CreateAccountComponent {
   branchDetails:[];
   constructor(public objservice: AccountService, private route: ActivatedRoute, private jwtHelper:JwtHelperService, private router:Router) {}
   ngOnInit(): void {
-    this.customerId = this.route.snapshot.params['customerId'];
+    this.route.params.subscribe(params => {
+      this.customerId = params['customerId'];
+      console.log(this.customerId);
+      // You can call your service here if needed
+      // this.custsrv.customertList();
+    });
+    // this.customerId = this.route.snapshot.params['customerId'];
     this.resetForm();
     this.objservice.fetchBranchDetails();
   }
@@ -53,16 +59,16 @@ onBranchChange(branchName: string): void {
 }
 authenticate() {
   const token = localStorage.getItem("jwt");
-
-  if (token && !this.jwtHelper.isTokenExpired(token)){
+  console.log(token != null && !this.jwtHelper.isTokenExpired(token));
+  if (token != null && !this.jwtHelper.isTokenExpired(token)){
     return true;
   }
-  this.router.navigate(['/signin']);
+  
   return false;
 }
 navigateToCustomerPage()
 {
-  
+  this.router.navigate(['/customer',this.customerId]);
 }
 
 }

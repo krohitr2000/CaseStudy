@@ -27,7 +27,8 @@ namespace MavericksBank.Controllers
         }
 
         // GET: api/Employees
-        [HttpGet, Authorize(Roles = "Employee")]
+        [HttpGet]
+        //[Authorize(Roles = "Employee, Admin")]
         public async Task<ActionResult<IEnumerable<Employee>>> GetEmployees()
         {
           if (_context.Employees == null)

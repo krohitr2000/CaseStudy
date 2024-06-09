@@ -15,8 +15,9 @@ export class AdminComponent implements OnInit {
   transactions: TransactionHistoryDetails[] = [];
   accounts: CreatedAccountDetails[] = [];
   showAddEmployeePanel: boolean = false;
-  showTransactionHistoryPanel: boolean = false; // Add this line
-  showAccountDetailsPanel: boolean = false; // Add this line
+  showTransactionHistoryPanel: boolean = false;
+  showAccountDetailsPanel: boolean = false; 
+employee: any;
 
   constructor(private fb: FormBuilder, private service: AdminService, private http: HttpClient) {
     this.employeeForm = this.fb.group({
@@ -67,4 +68,6 @@ export class AdminComponent implements OnInit {
   resetForm() {
     this.employeeForm.reset();
   }
+
+  
 }

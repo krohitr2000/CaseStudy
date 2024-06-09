@@ -20,21 +20,23 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { ConfirmPasswordComponent } from './confirm-password/confirm-password.component';
 import { AdminSigninComponent } from './Admin/admin-signin/admin-signin.component';
 import { AdminComponent } from './Admin/admin/admin.component';
+import { customerGuard } from './guards/customer.guard';
+import { employeeGuard } from './guards/employee.guard';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
-  {path:'employee/:employeeId',component:EmployeeComponent},
+  {path:'employee/:employeeId',component:EmployeeComponent, canActivate:[employeeGuard]},
   {path:'loan-plans/:accountId',component:LoanPlansComponent},
   {path:'aboutus',component:AboutusComponent},
   {path:'signin',component:SigninComponent},
   {path:'signup',component:SignupComponent},
   {path:'empsignin',component:EmpsigninComponent},
   {path:'create-account/:customerId',component:CreateAccountComponent},
-  {path:'display-account/:customerId',component:DisplayAccountComponent},
-  {path:'pending-accounts/:customerId',component:PendingAccountsComponent},
-  {path:'customer/:customerId',component:CustomerComponent},
-  {path:'customer',component:CustomerComponent},
-  { path: 'account/:accountId', component: AccountComponent },
+  {path:'display-account/:customerId',component:DisplayAccountComponent, canActivate:[customerGuard]},
+  {path:'pending-accounts/:customerId',component:PendingAccountsComponent, canActivate:[customerGuard]},
+  {path:'customer/:customerId',component:CustomerComponent, canActivate:[customerGuard]},
+  {path:'customer',component:CustomerComponent, canActivate:[customerGuard]},
+  {path: 'account/:accountId', component: AccountComponent },
   {path:'apply-loan/:accountId/:loanType',component:ApplyLoanComponent},
   {path:'transaction/:accountId',component:TransactionComponent},
   {path:'transaction-history/:accountId',component:TransactionHistoryComponent},

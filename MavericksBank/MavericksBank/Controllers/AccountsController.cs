@@ -54,10 +54,10 @@ namespace MavericksBank.Controllers
         {
             var accounts = await _context.Accounts.Where(a => a.CustomerId == customerId).ToListAsync();
 
-            if (accounts == null || !accounts.Any())
-            {
-                return NotFound();
-            }
+            //if (accounts == null || !accounts.Any())
+            //{
+            //    return NotFound();
+            //}
 
             return accounts;
         }

@@ -1,5 +1,5 @@
 export class EmployeeModel {
-    employeerId:number;
+    employeeId:number;
     username: string;
     password: string;
     name: string;

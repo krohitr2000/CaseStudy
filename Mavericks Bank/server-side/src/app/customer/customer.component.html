@@ -1,5 +1,5 @@
 <div class="backgrond-setter">
-<div class="container " *ngIf="authenticate()">
+<div class="container " disabled="authenticate()">
     <h2>Welcome to Mavericks Bank</h2>
     <h3 class="tagline">Banking Made Easy</h3>
   
@@ -50,7 +50,7 @@
           <div class="card-body">
             <h5 class="card-title">View Account Details</h5>
             <p class="card-text">View details of your existing accounts.</p>
-            <a [routerLink]="['/display-account' ,customerId]"class="btn btn-info"><i class="fa fa-eye"></i> View Details</a>
+            <a [routerLink]="['/display-account' ,customerId]" class="btn btn-info"><i class="fa fa-eye"></i> View Details</a>
           </div>
         </div>
       </div>
@@ -59,7 +59,7 @@
           <div class="card-body">
             <h5 class="card-title">Pending Account Requests</h5>
             <p class="card-text">Review your pending account requests</p>
-            <a [routerLink]="['/pending-accounts' ,customerId]"class="btn btn-success"><i class="fa fa-eye"></i> View Pending requests</a>
+            <a [routerLink]="['/pending-accounts', customerId]" class="btn btn-success"><i class="fa fa-eye"></i> View Pending requests</a>
           </div>
         </div>
       </div>

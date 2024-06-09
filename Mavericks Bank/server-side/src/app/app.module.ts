@@ -27,6 +27,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { ConfirmPasswordComponent } from './confirm-password/confirm-password.component';
 import { AdminComponent } from './Admin/admin/admin.component';
 import { AdminSigninComponent } from './Admin/admin-signin/admin-signin.component';
+import { ViewemployeesComponent } from './viewemployees/viewemployees.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,8 @@ import { AdminSigninComponent } from './Admin/admin-signin/admin-signin.componen
     ForgotPasswordComponent,
     ConfirmPasswordComponent,
     AdminComponent,
-    AdminSigninComponent, 
+    AdminSigninComponent,
+    ViewemployeesComponent, 
     
   ],
   imports: [

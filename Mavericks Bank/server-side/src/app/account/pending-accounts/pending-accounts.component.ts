@@ -19,6 +19,7 @@ export class PendingAccountsComponent implements OnInit {
   accounts: Account[] = [];
   ngOnInit():void
   {
+    console.log("STarted");
     this.customerId = this.route.snapshot.params['customerId'];
     this.srv.accountList(this.customerId).subscribe(
       (res)=>
@@ -27,11 +28,11 @@ export class PendingAccountsComponent implements OnInit {
   }
   authenticate() {
     const token = localStorage.getItem("jwt");
+    console.log(token != null + " " + !this.jwtHelper.isTokenExpired(token))
 
-    if (token && !this.jwtHelper.isTokenExpired(token)){
+    if (token != null && !this.jwtHelper.isTokenExpired(token)){
       return true;
     }
-    this.router.navigate(['/signin']);
     return false;
   }
 }

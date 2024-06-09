@@ -1,0 +1,32 @@
+<div class="outer-box">
+    <input type="checkbox" [(ngModel)]="showTable" class="check"> All Employees
+    <div *ngIf="showTable" class="table-container">
+        <div class="box-header">
+            <h2>All Employees</h2>
+        </div>
+        <div class="table-box">
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Employee ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let emp of employees">
+                        <td>{{ emp.employeeId }}</td>
+                        <td>{{ emp.name }}</td>
+                        <td>{{ emp.email }}</td>
+                        <td>{{ emp.phone }}</td>
+                        <td>
+                            <button (click)="deleteEmployee(emp.employeeId)" class="btn-delete">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

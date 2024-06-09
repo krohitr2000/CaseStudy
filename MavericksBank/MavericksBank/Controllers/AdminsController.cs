@@ -145,7 +145,7 @@ namespace MavericksBank.Controllers
             var claims = new List<Claim>
         {
             new Claim(ClaimTypes.Name, admin.Username),
-            new Claim(ClaimTypes.Role, "Employee")
+            new Claim(ClaimTypes.Role, "Admin")
         };
 
             var tokenDescription = new SecurityTokenDescriptor

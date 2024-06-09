@@ -6,7 +6,7 @@ import { TokenvalidationService } from '../tokenvalidation.service';
   providedIn: 'root'
 })
 export class SigninServiceService {
-  readonly customerloginurl = 'http://localhost:5126/api/Customers/login';
+  readonly customerloginurl = 'http://localhost:5126/api/Login/Login';
 
   constructor(private http: HttpClient, private srv:TokenvalidationService) { }
 

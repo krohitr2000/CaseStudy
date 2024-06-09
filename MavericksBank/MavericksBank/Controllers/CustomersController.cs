@@ -14,6 +14,7 @@ using System.Text;
 using System.Security.Cryptography;
 using Microsoft.AspNetCore.Authorization;
 using NuGet.Common;
+using MavericksBank.Util;
 
 
 namespace MavericksBank.Controllers
@@ -33,10 +34,10 @@ namespace MavericksBank.Controllers
         }
 
         // GET: api/Customers
-        [HttpGet, Authorize(Roles = "Customer")]
+        [HttpGet]
         public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
         {
-          if (_context.Customers == null)
+          if (_context.Customers.ToList().Count == 0)
           {
               return NotFound();
           }
@@ -105,6 +106,7 @@ namespace MavericksBank.Controllers
             var token = GenerateJwtToken(customer);
 
             customer.Token = token;
+            customer.Password = HashUtil.HashPassword(customer.Password);
 
 
             _context.Customers.Add(customer);

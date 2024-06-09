@@ -12,9 +12,9 @@ namespace MavericksBank.Models
         }
 
         public int LoanId { get; set; }
-        public string? LoanType { get; set; }
-        public int? AccountId { get; set; }
-        public decimal? LoanAmount { get; set; }
+        public string LoanType { get; set; }
+        public int AccountId { get; set; }
+        public decimal LoanAmount { get; set; }
         public decimal? InterestRate { get; set; }
         public string? LoanStatus { get; set; }
         public DateTime? ApprovalDate { get; set; }

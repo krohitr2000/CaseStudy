@@ -33,5 +33,14 @@ export class AdminService {
     return this.http.get<CreatedAccountDetails[]>("http://localhost:5126/api/Accounts");
   }
 
+  getAllEmployees(): Observable<EmployeeModel[]>{
+    return this.http.get<EmployeeModel[]>("http://localhost:5126/api/Employees");
+  }
+
+  deleteEmployee(employeeId: number)
+  {
+    return this.http.delete(`http://localhost:5126/api/Employees/${employeeId}`)
+  }
+
  
 }
