@@ -51,3 +51,6 @@
     background-size: 100vw 100vh;
     height: 100vh;
   }
+  .btn-secondary{
+    width: 90px;
+  }

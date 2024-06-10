@@ -1,4 +1,4 @@
-.account-type {
+/* .account-type {
     display: flex;
     justify-content: space-around;
   }
@@ -66,4 +66,14 @@
     background-attachment: fixed;
     background-size: 100vw 100vh;
     height: 100vh;
+  } */
+
+  .nav-link {
+    cursor: pointer;
+    margin: 10px 0;
   }
+  
+  .active {
+    font-weight: bold;
+  }
+  

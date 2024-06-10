@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MavericksBank")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+14e2f5048316101d0a00390c7da68bccbc6424b6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+637af54f8778c8627b95f579022b107e7934f30a")]
 [assembly: System.Reflection.AssemblyProductAttribute("MavericksBank")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MavericksBank")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

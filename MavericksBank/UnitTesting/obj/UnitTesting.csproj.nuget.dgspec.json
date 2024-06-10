@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SCS\\OneDrive\\Desktop\\CaseStudy\\MavericksBank\\UnitTesting\\UnitTesting.csproj": {}
+    "C:\\Users\\2000123561\\Desktop\\Project\\CaseStudy\\MavericksBank\\UnitTesting\\UnitTesting.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SCS\\OneDrive\\Desktop\\CaseStudy\\MavericksBank\\MavericksBank\\MavericksBank.csproj": {
+    "C:\\Users\\2000123561\\Desktop\\Project\\CaseStudy\\MavericksBank\\MavericksBank\\MavericksBank.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SCS\\OneDrive\\Desktop\\CaseStudy\\MavericksBank\\MavericksBank\\MavericksBank.csproj",
+        "projectUniqueName": "C:\\Users\\2000123561\\Desktop\\Project\\CaseStudy\\MavericksBank\\MavericksBank\\MavericksBank.csproj",
         "projectName": "MavericksBank",
-        "projectPath": "C:\\Users\\SCS\\OneDrive\\Desktop\\CaseStudy\\MavericksBank\\MavericksBank\\MavericksBank.csproj",
-        "packagesPath": "C:\\Users\\SCS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SCS\\OneDrive\\Desktop\\CaseStudy\\MavericksBank\\MavericksBank\\obj\\",
+        "projectPath": "C:\\Users\\2000123561\\Desktop\\Project\\CaseStudy\\MavericksBank\\MavericksBank\\MavericksBank.csproj",
+        "packagesPath": "C:\\Users\\2000123561\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\2000123561\\Desktop\\Project\\CaseStudy\\MavericksBank\\MavericksBank\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\SCS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\2000123561\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -34,6 +39,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -94,21 +104,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\SCS\\OneDrive\\Desktop\\CaseStudy\\MavericksBank\\UnitTesting\\UnitTesting.csproj": {
+    "C:\\Users\\2000123561\\Desktop\\Project\\CaseStudy\\MavericksBank\\UnitTesting\\UnitTesting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SCS\\OneDrive\\Desktop\\CaseStudy\\MavericksBank\\UnitTesting\\UnitTesting.csproj",
+        "projectUniqueName": "C:\\Users\\2000123561\\Desktop\\Project\\CaseStudy\\MavericksBank\\UnitTesting\\UnitTesting.csproj",
         "projectName": "UnitTesting",
-        "projectPath": "C:\\Users\\SCS\\OneDrive\\Desktop\\CaseStudy\\MavericksBank\\UnitTesting\\UnitTesting.csproj",
-        "packagesPath": "C:\\Users\\SCS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SCS\\OneDrive\\Desktop\\CaseStudy\\MavericksBank\\UnitTesting\\obj\\",
+        "projectPath": "C:\\Users\\2000123561\\Desktop\\Project\\CaseStudy\\MavericksBank\\UnitTesting\\UnitTesting.csproj",
+        "packagesPath": "C:\\Users\\2000123561\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\2000123561\\Desktop\\Project\\CaseStudy\\MavericksBank\\UnitTesting\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\SCS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\2000123561\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -116,14 +130,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\SCS\\OneDrive\\Desktop\\CaseStudy\\MavericksBank\\MavericksBank\\MavericksBank.csproj": {
-                "projectPath": "C:\\Users\\SCS\\OneDrive\\Desktop\\CaseStudy\\MavericksBank\\MavericksBank\\MavericksBank.csproj"
+              "C:\\Users\\2000123561\\Desktop\\Project\\CaseStudy\\MavericksBank\\MavericksBank\\MavericksBank.csproj": {
+                "projectPath": "C:\\Users\\2000123561\\Desktop\\Project\\CaseStudy\\MavericksBank\\MavericksBank\\MavericksBank.csproj"
               }
             }
           }
@@ -132,6 +147,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -175,7 +195,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

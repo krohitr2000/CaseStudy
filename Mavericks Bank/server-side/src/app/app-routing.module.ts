@@ -31,11 +31,19 @@ const routes: Routes = [
   {path:'signin',component:SigninComponent},
   {path:'signup',component:SignupComponent},
   {path:'empsignin',component:EmpsigninComponent},
-  {path:'create-account/:customerId',component:CreateAccountComponent},
-  {path:'display-account/:customerId',component:DisplayAccountComponent, canActivate:[customerGuard]},
-  {path:'pending-accounts/:customerId',component:PendingAccountsComponent, canActivate:[customerGuard]},
-  {path:'customer/:customerId',component:CustomerComponent, canActivate:[customerGuard]},
-  {path:'customer',component:CustomerComponent, canActivate:[customerGuard]},
+ 
+  // {path:'customer/:customerId',component:CustomerComponent, canActivate:[customerGuard]},
+  {
+    path: 'customer/:customerId',
+    component: CustomerComponent, canActivate: [customerGuard],
+    children: [
+      { path: '', redirectTo: 'customer', pathMatch: 'full' },
+      {path:'create-account/:customerId',component:CreateAccountComponent, },
+      {path:'display-account/:customerId',component:DisplayAccountComponent},
+      {path:'pending-accounts/:customerId',component:PendingAccountsComponent},
+    ]
+  },
+  
   {path: 'account/:accountId', component: AccountComponent },
   {path:'apply-loan/:accountId/:loanType',component:ApplyLoanComponent},
   {path:'transaction/:accountId',component:TransactionComponent},

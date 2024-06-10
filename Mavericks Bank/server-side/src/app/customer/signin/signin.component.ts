@@ -44,7 +44,7 @@ export class SigninComponent implements OnInit {
           this.tokenService.setToken(token);
           console.log(customerId);
           console.log(response);
-          this.router.navigate(['/customer', customerId]);
+          this.router.navigate(['/customer', customerId, 'create-account', customerId]);
         },
         error => {
           alert("Invalid Username or Password");

@@ -67,6 +67,7 @@ export class AccountService {
 
   public getIFSCCodeByBranch(branchName: string) {
     const branch = this.branchDetails.find(branch => branch.branchName === branchName);
+    console.log(this.branchDetails);
     return branch ? branch.ifscCode : undefined;
   }
 }
