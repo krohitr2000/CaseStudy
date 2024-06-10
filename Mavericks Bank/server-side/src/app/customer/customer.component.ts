@@ -17,6 +17,15 @@ export class CustomerComponent {
   {
 
   }
+
+  isExpanded = false;
+  
+  toggleMenu() {
+    this.isExpanded = !this.isExpanded;
+    console.log(this.isExpanded);
+    
+  }
+
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe(params => {
       this.customerId = params['customerId'];

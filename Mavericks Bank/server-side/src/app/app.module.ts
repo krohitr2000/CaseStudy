@@ -28,6 +28,9 @@ import { ConfirmPasswordComponent } from './confirm-password/confirm-password.co
 import { AdminComponent } from './Admin/admin/admin.component';
 import { AdminSigninComponent } from './Admin/admin-signin/admin-signin.component';
 import { ViewemployeesComponent } from './viewemployees/viewemployees.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,7 +73,9 @@ import { ViewemployeesComponent } from './viewemployees/viewemployees.component'
     })
 
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

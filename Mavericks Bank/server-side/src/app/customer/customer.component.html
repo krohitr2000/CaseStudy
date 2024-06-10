@@ -1,17 +1,12 @@
-<!-- sidebar.component.html -->
-<div>
-  <!-- Sidebar links -->
-  <!-- **************** MAIN CONTENT START **************** -->
+<!-- <div>
+  
   <main>
 
-    <!-- =======================Content START ================================== -->
     <section class="pt-3">
       <div class="container">
         <div class="row">
 
-          <!-- Sidebar START -->
           <div class="col-lg-4 col-xl-3">
-            <!-- Responsive offcanvas body START -->
             <ul class="nav flex-column nav-pills">
               <li><a class="nav-link" [routerLink]="['/customer', customerId, 'create-account', customerId]" routerLinkActive="active">Create New
                 Account</a>
@@ -28,17 +23,84 @@
           <div class="col-lg-8 col-xl-9">
             <router-outlet class="w-100"></router-outlet>
           </div>
-        </div>
-        <!-- Sidebar END -->
-
-        
+        </div>      
 
       </div>
     </section>
-    <!-- =======================
-      Content END -->
     
     </main>
-    <!-- **************** MAIN CONTENT END **************** -->
-    </div>
+    </div>  -->
 
+    <nav class="mnb navbar navbar-default position-relative ">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <!-- <button onclick="toggleMenu()" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <i class="ic fa fa-bars"></i>
+          </button> -->
+          <!-- <div style="padding: 15px 0;">
+             <button (click)="toggleMenu()" id="msbo"><i class="ic fa fa-bars"></i></button>
+          </div> -->
+        </div>        
+      </div>
+
+    </nav>
+    <!--msb: main sidebar-->
+    <div class="msb" id="msb" [class.msb-x]="isExpanded" style="margin-top: 5.35rem; width: 17rem;">
+        <nav class="navbar navbar-default" role="navigation">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <div class="brand-wrapper">
+              <!-- Brand -->
+              <div class="brand-name-wrapper">
+                <p class="navbar-brand" style="padding-top: 1rem; padding-left: 1rem;" >
+                  Customer Menu
+                </p>
+              </div>
+    
+            </div>
+    
+          </div>
+    
+          <!-- Main Menu -->
+          <div class="side-menu-container" style="width: 20rem;" >
+            <ul class="nav navbar-nav">
+    
+              <li class="d-flex align-items-center">
+                <a class="nav-link" [routerLink]="['/customer', customerId, 'create-account', customerId]" routerLinkActive="active">
+                <i class="fa fa-plus"></i> 
+                <span>Create New Account</span>
+              </a>
+              </li>
+              <li class="d-flex align-items-center"><a class="nav-link" [routerLink]="['/customer' , customerId , 'display-account' , customerId]" routerLinkActive="active"><i class="fa fa-puzzle-piece"></i><span>View Account Details</span> </a></li>
+              <li class="d-flex align-items-center"><a class="nav-link" [routerLink]="['/customer', customerId, 'pending-accounts', customerId]" routerLinkActive="active"><i class="fa fa-heart"></i><span>Pending Account Requests</span> 
+                </a></li>  
+              
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </nav>  
+    </div>
+    <!--main content wrapper-->
+    <div class="mcw">
+      <!--navigation here-->
+      <!--main content view-->
+      <div class="cv">
+        <div>
+         <div class="inbox">
+           <div class="inbox-sb">
+             
+           </div>
+           <div class="inbox-bx container-fluid">
+             <div class="row d-flex justify-content-center align-items-center">
+               
+               <div class="col-md-10 overflow-y-auto" >
+                <div class="">
+                  <router-outlet class="w-100"></router-outlet>
+                </div>
+               </div>
+             </div>
+           </div>
+         </div>
+        </div>
+      </div>
+    </div>

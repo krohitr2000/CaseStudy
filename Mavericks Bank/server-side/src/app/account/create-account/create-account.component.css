@@ -39,18 +39,27 @@
     background-color: #0056b3;
   }
   h2{
-    background-color: rgb(44, 89, 148);
+    background-color: rgb(59, 59, 59);
     color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
     margin-top: 0px;
     text-align: center;
   }
   .backgrond-setter{
-    background-image: url(/../assets/Images/backimage.jpg);
+
+    background: #ececec; 
+    min-height: 80vh;
+    padding: 2rem;
+    border-radius: 1rem;
+
+    /* background-image: url(/../assets/Images/backimage.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100vw 100vh;
-    height: 100vh;
+    height: 100vh; */
   }
+  
   .btn-secondary{
-    width: 90px;
+   width: fit-content;
   }
