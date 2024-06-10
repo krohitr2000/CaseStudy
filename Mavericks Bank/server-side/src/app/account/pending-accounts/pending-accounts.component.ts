@@ -22,9 +22,14 @@ export class PendingAccountsComponent implements OnInit {
     console.log("STarted");
     this.customerId = this.route.snapshot.params['customerId'];
     this.srv.accountList(this.customerId).subscribe(
-      (res)=>
-      this.pendingList = res.filter(account => account.status === 'PENDING')
+      (res)=> {
+        console.log("Pending List",res)
+        this.pendingList = res.filter(account => account.status === 'PENDING')
+
+      }
     );
+    console.log("Pending List",this.pendingList);
+
   }
   authenticate() {
     const token = localStorage.getItem("jwt");

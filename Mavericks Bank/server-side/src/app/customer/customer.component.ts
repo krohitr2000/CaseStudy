@@ -3,6 +3,7 @@ import { SeriveService } from './signup/signupserive.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Subscription } from 'rxjs';
+import { TokenvalidationService } from './signin/tokenvalidation.service';
 
 @Component({
   selector: 'app-customer',
@@ -13,7 +14,7 @@ export class CustomerComponent {
   customerId:number;
   private routeSub: Subscription;
 
-  constructor(public custsrv:SeriveService, private route: ActivatedRoute, private jwtHelper: JwtHelperService,private router:Router)
+  constructor(private tokenservice: TokenvalidationService,public custsrv:SeriveService, private route: ActivatedRoute, private jwtHelper: JwtHelperService,private router:Router)
   {
 
   }
@@ -24,6 +25,11 @@ export class CustomerComponent {
     this.isExpanded = !this.isExpanded;
     console.log(this.isExpanded);
     
+  }
+
+  logout() {
+    this.tokenservice.removeToken();
+    this.router.navigate(['/']);
   }
 
   ngOnInit(): void {

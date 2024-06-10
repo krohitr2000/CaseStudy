@@ -1,4 +1,4 @@
-<div class="backgrond-setter" style="padding-top: 2rem;">
+<div class="backgrond-setter" style="padding-top: 2rem;margin-top: 7rem;">
     <h3>Your Account Details</h3>
     <div class="table-container">
         <table class="table table-hover text-bg-primary">
@@ -14,7 +14,7 @@
                     <td>{{acc.accountId}}</td>
                     <td>{{acc.accountType}}</td>
                     <td>
-                        <a class="view-details-btn" (click)="redirectToAccountDetails(acc.accountId)">
+                        <a class="view-details-btn" style="cursor: pointer; text-decoration: none;" (click)="redirectToAccountDetails(acc.accountId)">
                             <i class="fa fa-eye"></i> View Details
                         </a>
                     </td>
@@ -22,5 +22,5 @@
             </tbody>
         </table>
     </div>
-    <p>To view more details click on icon in view details section</p>
+    <p style="color: black;">To view more details click on icon in view details section</p>
 </div>

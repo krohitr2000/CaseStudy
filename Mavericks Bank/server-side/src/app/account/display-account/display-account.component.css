@@ -6,20 +6,23 @@
     border-collapse: collapse;
     width: 80%;
     margin: 0 auto;
+    
 }
 
 th, td {
-    border: 1px solid #201b1b;
+    /* border: 1px solid #201b1b; */
+    color: rgb(59, 59, 59) ;
     padding: 8px;
     text-align: center;
 }
 
 th {
-    background-color: #eae4e4;
+    color: white ;
+    background-color: rgb(59, 59, 59);
 }
 
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: rgb(155, 154, 154);
 }
 
 .view-details-btn {
@@ -33,9 +36,12 @@ tr:nth-child(even) {
 }
 
 h3 {
+    background-color: rgb(59, 59, 59);
     text-align: center;
     font-family: Times new roman;
-    color: yellow;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: white;
     margin-bottom: 3rem;
 }
 
@@ -46,9 +52,13 @@ p {
 }
 
 .backgrond-setter {
-    background-image: url(/../assets/Images/backimage.jpg);
+    /* background-image: url(/../assets/Images/backimage.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100vw 100vh;
-    height: 100vh;
+    height: 100vh; */
+    background: #ececec; 
+    min-height: 80vh;
+    padding: 2rem;
+    border-radius: 1rem;
 }
