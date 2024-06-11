@@ -29,6 +29,11 @@ import { AdminComponent } from './Admin/admin/admin.component';
 import { AdminSigninComponent } from './Admin/admin-signin/admin-signin.component';
 import { ViewemployeesComponent } from './viewemployees/viewemployees.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { AccountsforapprovalComponent } from './employee/accountsforapproval/accountsforapproval.component';
+import { ClosecustomeraccountComponent } from './employee/closecustomeraccount/closecustomeraccount.component';
+import { AllaccountsComponent } from './employee/allaccounts/allaccounts.component';
+import { AlltransactionComponent } from './employee/alltransaction/alltransaction.component';
+import { LoanactionsComponent } from './employee/loanactions/loanactions.component';
 
 
 @NgModule({
@@ -54,7 +59,12 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     ConfirmPasswordComponent,
     AdminComponent,
     AdminSigninComponent,
-    ViewemployeesComponent, 
+    ViewemployeesComponent,
+    AccountsforapprovalComponent,
+    ClosecustomeraccountComponent,
+    AllaccountsComponent,
+    AlltransactionComponent,
+    LoanactionsComponent, 
     
   ],
   imports: [

@@ -1,0 +1,23 @@
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>Account ID</th>
+                <th>Account Type</th>
+                <th>Customer ID</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+            <tbody>
+            <tr *ngFor="let account of deletedAccounts">
+                <td>{{ account.accountId }}</td>
+                <td>{{ account.accountType }}</td>
+                <td>{{ account.customerId }}</td>
+                <td>
+                    <button (click)="approveCloseCustomerAccount(account.accountId)" class="approve-button">Approve</button>
+                    <button (click)="disapproveCloseCustomerAccount(account.accountId)" class="disapprove-button">Disapprove</button>
+                </td>
+            </tr>
+            </tbody>
+    </table>
+</div>

@@ -1,0 +1,18 @@
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>Account ID</th>
+                <th>Account Type</th>
+                <th>Customer ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let account of accounts">
+                <td>{{ account.accountId }}</td>
+                <td>{{ account.accountType }}</td>
+                <td>{{ account.customerId }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

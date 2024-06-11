@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CustomerComponent } from './customer/customer.component';
@@ -22,6 +22,11 @@ import { AdminSigninComponent } from './Admin/admin-signin/admin-signin.componen
 import { AdminComponent } from './Admin/admin/admin.component';
 import { customerGuard } from './guards/customer.guard';
 import { employeeGuard } from './guards/employee.guard';
+import { AccountsforapprovalComponent } from './employee/accountsforapproval/accountsforapproval.component';
+import { ClosecustomeraccountComponent } from './employee/closecustomeraccount/closecustomeraccount.component';
+import { AllaccountsComponent } from './employee/allaccounts/allaccounts.component';
+import { AlltransactionComponent } from './employee/alltransaction/alltransaction.component';
+import { LoanactionsComponent } from './employee/loanactions/loanactions.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -43,6 +48,18 @@ const routes: Routes = [
       {path:'pending-accounts/:customerId',component:PendingAccountsComponent},
     ]
   },
+  {
+    path:'employee/:employeeId',
+    component: EmployeeComponent, canActivate:[employeeGuard],
+    children:[
+      {path:'', redirectTo:'employee', pathMatch:'full'},
+      {path:'accountsforapproval/:employeeId',component:AccountsforapprovalComponent},
+      {path:'closecustomeraccount/:employeeId', component:ClosecustomeraccountComponent},
+      {path:'allaccounts/:employeeId',component:AllaccountsComponent},
+      {path:'alltransaction/:employeeId',component:AlltransactionComponent},
+      {path:'loanactions/:employeeId',component:LoanactionsComponent}
+    ]
+  },
   
   {path: 'account/:accountId/:customerId', component: AccountComponent },
   {path:'apply-loan/:accountId/:loanType',component:ApplyLoanComponent},
@@ -51,7 +68,7 @@ const routes: Routes = [
   {path:'forgot-password',component:ForgotPasswordComponent},
   {path:'confirm-password/:customerId',component:ConfirmPasswordComponent},
   {path:'admin-signin',component:AdminSigninComponent},
-  {path:'admin/:adminId',component:AdminComponent}
+  {path:'admin/:adminId',component:AdminComponent},
 ];
 
 @NgModule({

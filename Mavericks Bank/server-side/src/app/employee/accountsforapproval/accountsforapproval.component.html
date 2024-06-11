@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="outer-box">
+        <div class="box-header">
+            <h2>Accounts for Approval</h2>
+            <div class="arrow"></div>
+        </div>
+        <div class="inner-box">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Account ID</th>
+                        <th>Account Type</th>
+                        <th>Customer ID</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let account of createdAccounts">
+                    <td>{{ account.accountId }}</td>
+                    <td>{{ account.accountType }}</td>
+                    <td>{{ account.customerId }}</td>
+                    <td>
+                        <button (click)="approveNewCustomerAccount(account.accountId)" class="approve-button">Approve</button>
+                        <button (click)="disapproveNewCustomerAccount(account.accountId)" class="disapprove-button">Disapprove</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>

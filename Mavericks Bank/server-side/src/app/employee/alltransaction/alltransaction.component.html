@@ -1,0 +1,20 @@
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>Transaction ID</th>
+                <th>Sender ID</th>
+                <th>Receiver ID</th>
+                <th>Transaction Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let transaction of transactions">
+                <td>{{ transaction.transactionId }}</td>
+                <td>{{ transaction.senderAccountId }}</td>
+                <td>{{ transaction.recieverAccountId }}</td>
+                <td>{{ transaction.transactionType }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

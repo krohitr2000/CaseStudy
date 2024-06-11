@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { CreatedAccountDetails } from '../account/create-account/createdAccountDetails';
 import { TransactionHistoryDetails } from '../account/transaction/transaction-history/transaction';
 import { LoanDetails } from '../account/create-account/apply-loan/loanDetails';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Route } from '@angular/router';
 
 @Component({
@@ -14,6 +14,20 @@ import { Route } from '@angular/router';
 
 
 export class EmployeeComponent {
+
+  isExpanded = false;
+  
+  toggleMenu() {
+    this.isExpanded = !this.isExpanded;
+    console.log(this.isExpanded);
+    
+  }
+
+  logout() {
+    alert("Are you sure you want to logout?")
+    this.router.navigate(['/']);
+  }
+
   accounts:CreatedAccountDetails[] = [];
   createdAccounts:CreatedAccountDetails[] = [];
   deletedAccounts:CreatedAccountDetails[] = [];
@@ -21,7 +35,7 @@ export class EmployeeComponent {
   employeeId:number;
   loans:LoanDetails[]=[];
 
-  constructor(private http:HttpClient, private route: ActivatedRoute) { 
+  constructor(private http:HttpClient, private route: ActivatedRoute, private router:Router) { 
     this.http.get<CreatedAccountDetails[]>("http://localhost:5126/api/Accounts").subscribe(
       res=>{
         this.accounts = res;
@@ -125,6 +139,8 @@ export class EmployeeComponent {
         }
       )
     }
+
+    
 
   refreshPage() {
     window.location.reload();

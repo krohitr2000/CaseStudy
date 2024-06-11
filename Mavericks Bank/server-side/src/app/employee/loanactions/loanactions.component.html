@@ -1,0 +1,28 @@
+<div class="container">
+    <table>
+        <thead>
+        <tr>
+            <th>Loan ID</th>
+            <th>Loan Type</th>
+            <th>Account ID</th>
+            <th>Loan Amount</th>
+            <th>Loan Status</th>
+            <th>Action</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let loan of loans">
+            <td>{{ loan.loanId }}</td>
+            <td>{{ loan.loanType }}</td>
+            <td>{{ loan.accountId}}</td>
+            <td>{{ loan.loanAmount }}</td>
+            <td>{{ loan.loanStatus }}</td>
+            <td>
+                <button (click)="approveLoan(loan.loanId)" class="approve-button">Approve</button>
+                <button (click)="disapproveLoan(loan.loanId)" class="disapprove-button">Disapprove</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

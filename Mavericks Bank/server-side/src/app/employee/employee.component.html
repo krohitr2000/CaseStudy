@@ -1,4 +1,4 @@
-
+<!-- 
 <body style="margin-top: 7rem;">
     <div class="back">
     <div class="logo">
@@ -157,4 +157,141 @@
     <script src="script.js"></script>
     </div>
 </body>
+ -->
 
+ <nav class="mnb navbar navbar-default position-relative">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      </div>
+    </div>
+  </nav>
+  <!--msb: main sidebar-->
+  <div
+    class="msb"
+    id="msb"
+    [class.msb-x]="isExpanded"
+    style="margin-top: 5.35rem; width: 17rem"
+  >
+    <nav class="navbar navbar-default" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <div class="brand-wrapper">
+          <!-- Brand -->
+          <div class="brand-name-wrapper">
+            <p class="navbar-brand" style="padding-top: 1rem; padding-left: 1rem">
+              Employees Workspace
+            </p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Main Menu -->
+      <div class="side-menu-container" style="width: 20rem">
+        <ul class="nav navbar-nav">
+          <li class="d-flex align-items-center">
+            <a
+              class="nav-link"
+              [routerLink]="[
+                '/employee',
+                employeeId,
+                'accountsforapproval',
+                employeeId
+              ]"
+              routerLinkActive="active"
+            >
+              <i class="fa fa-plus"></i>
+              <span>Accounts for Approval</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <a
+              class="nav-link"
+              [routerLink]="[
+                '/employee',
+                employeeId,
+                'allaccounts',
+                employeeId
+              ]"
+              routerLinkActive="active"
+            >
+              <i class="fa fa-bookmark"></i>
+              <span>All Accounts </span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <a
+              class="nav-link"
+              [routerLink]="[
+                '/employee',
+                employeeId,
+                'alltransaction',
+                employeeId
+              ]"
+              routerLinkActive="active"
+              ><i class="fa fa-hourglass"></i><span>All Transactions</span>
+            </a>
+          </li>
+
+          <li class="d-flex align-items-center">
+            <a
+              class="nav-link"
+              [routerLink]="[
+                '/employee',
+                employeeId,
+                'closecustomeraccount',
+                employeeId
+              ]"
+              routerLinkActive="active"
+              ><i class="fa fa-hourglass"></i><span>Accounts for Deactivating</span>
+            </a>
+          </li>
+
+          <li class="d-flex align-items-center">
+            <a
+              class="nav-link"
+              [routerLink]="[
+                '/employee',
+                employeeId,
+                'loanactions',
+                employeeId
+              ]"
+              routerLinkActive="active"
+              ><i class="fa fa-hourglass"></i><span>Loan Requests</span>
+            </a>
+          </li>
+
+          <li class="d-flex align-items-center">
+            <a (click)="logout()"
+              class="nav-link"
+              click
+              routerLinkActive="active"
+              ><i class="fa fa-power-off"></i><span>Log Out</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+  </div>
+  <!--main content wrapper-->
+  <div class="mcw">
+    <!--navigation here-->
+    <!--main content view-->
+    <div class="cv">
+      <div>
+        <div class="inbox">
+          <div class="inbox-sb"></div>
+          <div class="inbox-bx container-fluid">
+            <div class="row d-flex justify-content-center align-items-center">
+              <div class="col-md-10 overflow-y-auto">
+                <div class="">
+                  <router-outlet class="w-100"></router-outlet>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
