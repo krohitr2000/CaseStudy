@@ -29,6 +29,7 @@ export class CustomerComponent {
 
   logout() {
     this.tokenservice.removeToken();
+    alert("Are you sure you want to logout?")
     this.router.navigate(['/']);
   }
 

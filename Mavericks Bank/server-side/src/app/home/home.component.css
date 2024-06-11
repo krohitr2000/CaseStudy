@@ -86,10 +86,33 @@ a{
   text-decoration: none;
   font-size: 17px;
 }
-.back{
+/* .back{
   background-image:url('/../assets/Images/backimage.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed; 
   background-size: 100% 100%;
   height: auto;
+} */
+.upper{
+  background-image: url('https://hamiltonbank.net/wp-content/uploads/2023/09/1-shutterstock_2149539797.jpg');
+  background-position: center;
+  height: 100%;
+  background-repeat: repeat;
+  background-size: cover;
+}
+.upper-text{
+  position: absolute;
+  margin-top: 15%;
+  width: max-content;
+  color: black !important;
+  margin-left: 67%;
+  text-align: center;
+
+}
+.upper-text h1{
+  color: black;
+  font-size: 4rem;
+}
+.upper-text h2{
+  color: black;
 }

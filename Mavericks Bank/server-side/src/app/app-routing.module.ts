@@ -44,7 +44,7 @@ const routes: Routes = [
     ]
   },
   
-  {path: 'account/:accountId', component: AccountComponent },
+  {path: 'account/:accountId/:customerId', component: AccountComponent },
   {path:'apply-loan/:accountId/:loanType',component:ApplyLoanComponent},
   {path:'transaction/:accountId',component:TransactionComponent},
   {path:'transaction-history/:accountId',component:TransactionHistoryComponent},

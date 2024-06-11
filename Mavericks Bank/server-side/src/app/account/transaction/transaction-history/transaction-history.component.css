@@ -18,8 +18,14 @@ tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 h3{
+    background-color:rgb(59, 59, 59) ;
+    padding: 2px;
+    color: white;
     text-align: center;
     margin-top: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
     font-family: 'Times New Roman';
+}
+.trans{
+    margin-top: 8rem;
 }

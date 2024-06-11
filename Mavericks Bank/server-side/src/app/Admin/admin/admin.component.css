@@ -8,6 +8,10 @@
     height: 100vh;
 } */
 
+.h3{
+    background-color: rgb(59, 59, 59);
+}
+
 .outer-box {
     border: 1px solid #ccc;
     border-radius: 10px;

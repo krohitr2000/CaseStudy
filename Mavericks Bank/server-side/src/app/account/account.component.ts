@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AccountService } from './account.service';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute, Route } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Loan } from './create-account/apply-loan/loan.model';
 import { LoanService } from './create-account/apply-loan/loan.service';
 
@@ -11,13 +11,14 @@ import { LoanService } from './create-account/apply-loan/loan.service';
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent {
+  customerId:number;
   accountId:number;
   loans:Loan[];
   accountBalance: number;
   showAccountBalance = false;
   selectedBranch: string;
   ifscCode: string; 
-  constructor(public objservice: AccountService, private route:ActivatedRoute, private loanService: LoanService ) {}
+  constructor(public objservice: AccountService, private route:ActivatedRoute, private loanService: LoanService, private router:Router ) {}
 
   ngOnInit(): void {
     this.accountId = this.route.snapshot.params['accountId'];
@@ -55,5 +56,12 @@ export class AccountComponent {
           console.error('Error fetching IFSC code:', error);
         }
       );
+    }
+
+    navigateToCustomerPage()
+    {
+      let customerID = this.route.snapshot.params['customerId'];
+      this.router.navigate(['/customer',customerID, "display-account", customerID]);
+      
     }
 }

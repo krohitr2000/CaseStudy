@@ -8,7 +8,7 @@
 
 
 h2 {
-    background-color: blueviolet;
+    background-color: rgb(59, 59, 59);
     color: white;
     font-family: Arial, sans-serif;
     padding: 10px;
@@ -33,21 +33,23 @@ h2 {
 }
 
 .blue-box {
-    background-color: #ce246e;
-    color: #fff;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    color: black;
 }
 
 .green-box {
-    background-color: #268abf;
-    color: #fff;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    color: black;
 }
 
 
 .button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #fff; 
-    color: #007bff;
+    background-color: #007bff; 
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -56,7 +58,7 @@ h2 {
 }
 
 .button:hover {
-    background-color: #f0f0f0;
+    background-color: rgb(83, 82, 82);
 }
 
 
@@ -88,18 +90,21 @@ h2 {
 
 
 .deposit-box {
-    color: white;
-    background-color: #2d5980;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    color: black;
 }
 
 .withdraw-box {
-    color: white;
-    background-color: #2d5980;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    color: black;
 }
 
 .transfer-box {
-    color: white;
-    background-color: #2d5980;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    color: black;
 }
 
 
@@ -107,8 +112,8 @@ h2 {
     display: block;
     margin: 10px auto;
     padding: 10px 20px;
-    background-color: #1deea1;
-    color: #1b1717;
+    background-color: #007bff;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -116,10 +121,11 @@ h2 {
 }
 
 .inner-button:hover {
-    background-color: #17a673; 
+    background-color: rgb(83, 82, 82); 
 }
 .backgrond-setter{
-    background-image: url(/../assets/Images/backimg.jpg);
+    
+    margin-top: 5rem;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100vw 100vh;

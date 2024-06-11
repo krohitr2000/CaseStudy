@@ -32,7 +32,7 @@ export class DisplayAccountComponent {
   }
   redirectToAccountDetails(accountId: number): void {
     console.log(accountId);
-    this.router.navigate(['/account', accountId]);
+    this.router.navigate(['/account', accountId,  this.route.snapshot.params['customerId']]);
 }
 
     

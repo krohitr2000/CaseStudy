@@ -31,7 +31,7 @@
   }
   
   .col-md-4 {
-    background-color: #244c91;
+    background-color: rgb(59, 59, 59);
     color: white;
     padding: 20px;
     border-radius: 10px;
@@ -73,7 +73,7 @@
     color: rgb(232, 224, 224);
   }
   h2{
-    background-color: rgb(44, 89, 148);
+    background-color: rgb(59, 59, 59);
     color: white;
     font-family: Georgia;
   }
@@ -86,11 +86,11 @@
     text-align: center;
   }
 
-  .backgrond-setter{
+  /* .backgrond-setter{
     background-image: url(/../assets/Images/homeback.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100vw 100vh;
     height: 100vh;
-  }
+  } */
   
