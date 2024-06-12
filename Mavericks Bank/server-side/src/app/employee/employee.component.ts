@@ -5,6 +5,7 @@ import { TransactionHistoryDetails } from '../account/transaction/transaction-hi
 import { LoanDetails } from '../account/create-account/apply-loan/loanDetails';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Route } from '@angular/router';
+import { EmployeeModel } from '../admin/admin/admin.model';
 
 @Component({
   selector: 'app-employee',
@@ -24,7 +25,7 @@ export class EmployeeComponent {
   }
 
   logout() {
-    alert("Are you sure you want to logout?")
+    confirm("Are you sure you want to logout?")
     this.router.navigate(['/']);
   }
 
@@ -32,10 +33,13 @@ export class EmployeeComponent {
   createdAccounts:CreatedAccountDetails[] = [];
   deletedAccounts:CreatedAccountDetails[] = [];
   transactions:TransactionHistoryDetails[] =[];
+  employee:EmployeeModel=new EmployeeModel();
   employeeId:number;
   loans:LoanDetails[]=[];
 
   constructor(private http:HttpClient, private route: ActivatedRoute, private router:Router) { 
+
+
     this.http.get<CreatedAccountDetails[]>("http://localhost:5126/api/Accounts").subscribe(
       res=>{
         this.accounts = res;
@@ -60,6 +64,11 @@ export class EmployeeComponent {
   ngOnInit():void
   {
     this.employeeId = this.route.snapshot.params['employeeId'];
+    this.http.get(`http://localhost:5126/api/Employees/${this.employeeId}`).subscribe({
+      next:data=>{
+        this.employee=data as EmployeeModel
+      }
+    })
   }
 
   setCreatedAccounts() {

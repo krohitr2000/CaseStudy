@@ -1,95 +1,123 @@
-<div class="backgrond-setter">
-    <h3 class="h3" style="color: white; font-family: 'Times New Roman'; text-align: center; margin-top: 7rem; margin-bottom: 1rem;">Admin Workspace</h3>
-
-    <!-- Add Employee Form Section -->
-    <div class="outer-box" style="margin-top: 5rem;">
-        <input type="checkbox" [(ngModel)]="showAddEmployeePanel" class="check"> Show Add Employee Form
-        <div *ngIf="showAddEmployeePanel" class="form-container">
-            <h3 class="form-header">Add Employee</h3>
-            <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="employee-form">
-                <div class="form-group">
-                    <label for="username" class="form-label">Username:</label>
-                    <input type="text" formControlName="username" placeholder="Enter username" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="name" class="form-label">Name:</label>
-                    <input type="text" formControlName="name" placeholder="Enter name" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="email" class="form-label">Email:</label>
-                    <input type="email" formControlName="email" placeholder="Enter email" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="phone" class="form-label">Phone:</label>
-                    <input type="text" formControlName="phone" placeholder="Enter number" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="password" class="form-label">Password:</label>
-                    <input type="password" formControlName="password" placeholder="Enter password" class="form-control">
-                </div>
-                <button type="submit" [disabled]="!employeeForm.valid" class="btn-submit">Add Employee</button>
-            </form>
-        </div>
+<nav class="mnb navbar navbar-default position-relative">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      </div>
     </div>
-    
-    <!-- Transaction History Section -->
-    <div class="outer-box">
-        <input type="checkbox" [(ngModel)]="showTransactionHistoryPanel" class="check"> Show Transaction History
-        <div *ngIf="showTransactionHistoryPanel" class="table-container">
-            <div class="box-header">
-                <h2>Transaction History</h2>
-            </div>
-            <div class="table-box">
-                <table class="styled-table">
-                    <thead>
-                        <tr>
-                            <th>Transaction ID</th>
-                            <th>Sender ID</th>
-                            <th>Receiver ID</th>
-                            <th>Transaction Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let transaction of transactions">
-                            <td>{{ transaction.transactionId }}</td>
-                            <td>{{ transaction.senderAccountId }}</td>
-                            <td>{{ transaction.recieverAccountId }}</td>
-                            <td>{{ transaction.transactionType }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+  </nav>
+  <!--msb: main sidebar-->
+  <div
+    class="msb"
+    id="msb"
+    [class.msb-x]="isExpanded"
+    style="margin-top: 5.35rem; width: 17rem"
+  >
+    <nav class="navbar navbar-default" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <div class="brand-wrapper">
+          <!-- Brand -->
+          <div class="brand-name-wrapper">
+            <p class="navbar-brand text-center" style="padding-top: 1rem; padding-left: 1rem">
+              <b> <i>Workspace</i> </b>
+            </p>
+          </div>
         </div>
-    </div>
-    
+      </div>
+  
+      <!-- Main Menu -->
+      <div class="side-menu-container" style="width: 20rem">
+        <ul class="nav navbar-nav">
+          <li class="d-flex align-items-center">
+            <a
+              class="nav-link"
+              [routerLink]="[
+                '/admin',
+                adminId,
+                'addemployee',
+                adminId
+              ]"
+              routerLinkActive="active"
+            >
+              <i class="fa fa-user-circle-o"></i>
+              <span>Add New Employee</span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <a
+              class="nav-link"
+              [routerLink]="[
+                '/admin',
+                adminId,
+                'allaccounts',
+                adminId
+              ]"
+              routerLinkActive="active"
+            >
+              <i class="fa fa-bookmark"></i>
+              <span>All Accounts </span>
+            </a>
+          </li>
+          <li class="d-flex align-items-center">
+            <a
+              class="nav-link"
+              [routerLink]="[
+                '/admin',
+                adminId,
+                'alltransaction',
+                adminId
+              ]"
+              routerLinkActive="active"
+              ><i class="fa fa-money"></i><span>All Transactions</span>
+            </a>
+          </li>
 
-    <!-- Account Details Section -->
-    <div class="outer-box">
-        <input type="checkbox" [(ngModel)]="showAccountDetailsPanel" class="check"> Show Account Details
-        <div *ngIf="showAccountDetailsPanel" class="table-container">
-            <div class="box-header">
-                <h2>All Accounts</h2>
+          <li class="d-flex align-items-center">
+            <a
+              class="nav-link"
+              [routerLink]="[
+                '/admin',
+                adminId,
+                'viewemployees',
+                {adminId}
+              ]"
+              routerLinkActive="active"
+              ><i class="fa fa-remove"></i><span>View All Employees</span>
+            </a>
+          </li>
+
+          
+          <!-- <li class="d-flex align-items-center">
+            <a (click)="logout()"
+              class="nav-link"
+              click
+              routerLinkActive="active"
+              ><i class="fa fa-power-off"></i><span>Log Out</span>
+            </a>
+          </li> -->
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+  </div>
+  <!--main content wrapper-->
+  <div class="mcw">
+    <!--navigation here-->
+    <!--main content view-->
+    <div class="cv">
+      <div>
+        <div class="inbox">
+          <div class="inbox-sb"></div>
+          <div class="inbox-bx container-fluid">
+            <div class="row d-flex justify-content-center align-items-center">
+              <div class="col-md-10 overflow-y-auto">
+                <div class="">
+                  <router-outlet class="w-100"></router-outlet>
+                </div>
+              </div>
             </div>
-            <div class="table-box">
-                <table class="styled-table">
-                    <thead>
-                        <tr>
-                            <th>Account ID</th>
-                            <th>Account Type</th>
-                            <th>Customer ID</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let account of accounts">
-                            <td>{{ account.accountId }}</td>
-                            <td>{{ account.accountType }}</td>
-                            <td>{{ account.customerId }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
-    
-<app-viewemployees></app-viewemployees>
-
+  </div>
+  

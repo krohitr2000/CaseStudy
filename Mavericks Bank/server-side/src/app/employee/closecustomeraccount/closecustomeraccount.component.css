@@ -1,4 +1,4 @@
-table {
+/* table {
     border-collapse: collapse;
     width: 100%;
     border: 2px solid #ccc;
@@ -141,4 +141,33 @@ table {
   .container{
     margin-top: 50%;
   }
+   */
+
+   .table{
+    width: 80%;
+  }
+
+  .approve-button, .disapprove-button {
+    padding: 8px 12px;
+    margin-left: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .approve-button {
+    background-color: #4CAF50; 
+    color: white;
+  }
   
+  .approve-button:hover {
+    background-color: #45a049;
+  }
+  
+  .disapprove-button {
+    background-color: #f44336; 
+    color: white;
+  }
+  
+  .disapprove-button:hover {
+    background-color: #d32f2f;
+  }

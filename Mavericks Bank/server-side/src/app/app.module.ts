@@ -25,8 +25,8 @@ import { TransactionHistoryComponent } from './account/transaction/transaction-h
 import { EmployeeComponent } from './employee/employee.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ConfirmPasswordComponent } from './confirm-password/confirm-password.component';
-import { AdminComponent } from './Admin/admin/admin.component';
-import { AdminSigninComponent } from './Admin/admin-signin/admin-signin.component';
+import { AdminComponent } from './admin/admin/admin.component';
+import { AdminSigninComponent } from './admin/admin-signin/admin-signin.component';
 import { ViewemployeesComponent } from './viewemployees/viewemployees.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AccountsforapprovalComponent } from './employee/accountsforapproval/accountsforapproval.component';
@@ -34,6 +34,7 @@ import { ClosecustomeraccountComponent } from './employee/closecustomeraccount/c
 import { AllaccountsComponent } from './employee/allaccounts/allaccounts.component';
 import { AlltransactionComponent } from './employee/alltransaction/alltransaction.component';
 import { LoanactionsComponent } from './employee/loanactions/loanactions.component';
+import { AddemployeeComponent } from './admin/addemployee/addemployee.component';
 
 
 @NgModule({
@@ -64,7 +65,8 @@ import { LoanactionsComponent } from './employee/loanactions/loanactions.compone
     ClosecustomeraccountComponent,
     AllaccountsComponent,
     AlltransactionComponent,
-    LoanactionsComponent, 
+    LoanactionsComponent,
+    AddemployeeComponent,
     
   ],
   imports: [

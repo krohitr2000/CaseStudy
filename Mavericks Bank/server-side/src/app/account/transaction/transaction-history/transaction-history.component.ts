@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, input } from '@angular/core';
 import { TransactionComponent } from '../transaction.component';
 import { HttpClient } from '@angular/common/http';
 import { Transaction } from '../transaction';
@@ -13,6 +13,8 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 export class TransactionHistoryComponent implements OnInit {
   transactionHistory: any[] = [];
   accountId = undefined;
+
+  @Input() id : any;
   response: Transaction[] = [];
 
   constructor(private http:HttpClient,private route:ActivatedRoute, private jwtHelper:JwtHelperService, private router:Router) 
@@ -53,6 +55,9 @@ export class TransactionHistoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.accountId = this.route.snapshot.params['accountId'];
+    this.accountId = this.id;
+    console.log(this.accountId);
+    
     this.http.get<Transaction[]>("http://localhost:5126/api/Transactions/ByAccountId/"+this.accountId).subscribe(
       res=>{
         this.response = res;

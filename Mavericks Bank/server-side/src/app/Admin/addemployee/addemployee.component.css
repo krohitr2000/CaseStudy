@@ -1,0 +1,17 @@
+.form-floating{
+    margin-bottom: 5px;
+}
+
+.form-container{
+    width: 100%;
+}
+
+form{
+    display: grid;
+    width: 100%;
+}
+
+button{
+    width: 50%;
+    justify-self: center;
+}

@@ -1,0 +1,50 @@
+<div class="outer-box" style="margin-top: 10%;">
+    <div class="form-container d-flex flex-column align-items-center w-full">
+        <h3 class="form-header">Add Employee</h3>
+        <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="employee-form form-floating">
+            <div class="form-floating">  
+                <input type="text" class="form-control" id="username" placeholder="" value="">  
+                <label for="username">Username</label>
+            </div>
+            <div class="form-floating">  
+                <input type="text" class="form-control" id="name" placeholder="" value="">  
+                <label for="name">Name</label>
+            </div>
+            <div class="form-floating">  
+                <input type="email" class="form-control" id="email" placeholder="" value="">  
+                <label for="email">Email</label>
+            </div>
+            <div class="form-floating">  
+                <input type="number" class="form-control" id="phone" placeholder="" value="">  
+                <label for="phone">Phone</label>
+            </div>
+            <div class="form-floating">  
+                <input type="text" class="form-control" id="password" placeholder="" value="">  
+                <label for="password">Password</label>
+            </div>
+            <!-- <div class="form-group">
+                <label for="username" class="form-label">Username:</label>
+                <input type="text" formControlName="username" placeholder="Enter username" class="form-control">
+            </div> -->
+            <!-- <div class="form-group">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" formControlName="name" placeholder="Enter name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" formControlName="email" placeholder="Enter email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="phone" class="form-label">Phone:</label>
+                <input type="text" formControlName="phone" placeholder="Enter number" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" formControlName="password" placeholder="Enter password" class="form-control">
+            </div> -->
+            <!-- <button type="submit" [disabled]="!employeeForm.valid" class="btn btn-outline-success">Add Employee</button> -->
+
+            <button type="submit" class="btn btn-outline-success">Add Employee</button>
+        </form>
+    </div>
+</div>

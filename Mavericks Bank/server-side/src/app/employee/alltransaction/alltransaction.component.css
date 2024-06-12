@@ -1,4 +1,4 @@
-table {
+/* table {
     border-collapse: collapse;
     width: 100%;
     border: 2px solid #ccc;
@@ -136,8 +136,73 @@ table {
     text-align: center;
     background-color: rgb(242, 238, 235);
     color: black;
-  }
+  } */
   .container{
-    margin-top: 40%;
+    margin-top: 12%;
+    margin-left: 2%;
   }
-  
+  .outer-box {
+    background-color: #fff;
+    margin-top: 10%;
+}
+
+.table-container {
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.box-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Arial', sans-serif;
+    margin-top: 20px;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 14px;
+}
+
+.styled-table th {
+    background-color: #17a2b8;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.styled-table tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.styled-table tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tr:last-of-type {
+    border-bottom: 2px solid #17a2b8;
+}
+
+.styled-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.check {
+    margin-right: 10px;
+    cursor: pointer;
+}

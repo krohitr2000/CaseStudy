@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminService } from '../Admin/admin-signin/admin-signin.service';
-import { EmployeeModel } from '../Admin/admin/admin.model';
+import { AdminService } from '../admin/admin-signin/admin-signin.service';
+import { EmployeeModel } from '../admin/admin/admin.model';
 
 @Component({
   selector: 'app-viewemployees',

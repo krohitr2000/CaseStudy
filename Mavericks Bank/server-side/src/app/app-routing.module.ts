@@ -18,8 +18,8 @@ import { TransactionHistoryComponent } from './account/transaction/transaction-h
 import { EmployeeComponent } from './employee/employee.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ConfirmPasswordComponent } from './confirm-password/confirm-password.component';
-import { AdminSigninComponent } from './Admin/admin-signin/admin-signin.component';
-import { AdminComponent } from './Admin/admin/admin.component';
+import { AdminSigninComponent } from './admin/admin-signin/admin-signin.component';
+import { AdminComponent } from './admin/admin/admin.component';
 import { customerGuard } from './guards/customer.guard';
 import { employeeGuard } from './guards/employee.guard';
 import { AccountsforapprovalComponent } from './employee/accountsforapproval/accountsforapproval.component';
@@ -27,6 +27,9 @@ import { ClosecustomeraccountComponent } from './employee/closecustomeraccount/c
 import { AllaccountsComponent } from './employee/allaccounts/allaccounts.component';
 import { AlltransactionComponent } from './employee/alltransaction/alltransaction.component';
 import { LoanactionsComponent } from './employee/loanactions/loanactions.component';
+import { AddemployeeComponent } from './admin/addemployee/addemployee.component';
+import { adminGuard } from './guards/admin.guard';
+import { ViewemployeesComponent } from './viewemployees/viewemployees.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -60,6 +63,17 @@ const routes: Routes = [
       {path:'loanactions/:employeeId',component:LoanactionsComponent}
     ]
   },
+  {
+    path:'admin/:adminId',
+    component:AdminComponent, canActivate:[adminGuard],
+    children:[
+      {path:'',redirectTo:'admin',pathMatch:'full'},
+      {path:'allaccounts/:adminId',component:AllaccountsComponent},
+      {path:'alltransaction/:employeeId',component:AlltransactionComponent},
+      {path:'addemployee/:adminId',component:AddemployeeComponent},
+      {path:'viewemployees',component:ViewemployeesComponent}
+    ]
+  },
   
   {path: 'account/:accountId/:customerId', component: AccountComponent },
   {path:'apply-loan/:accountId/:loanType',component:ApplyLoanComponent},
@@ -69,6 +83,8 @@ const routes: Routes = [
   {path:'confirm-password/:customerId',component:ConfirmPasswordComponent},
   {path:'admin-signin',component:AdminSigninComponent},
   {path:'admin/:adminId',component:AdminComponent},
+  
+  
 ];
 
 @NgModule({

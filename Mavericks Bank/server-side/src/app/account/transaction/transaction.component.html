@@ -1,10 +1,10 @@
 
-<div class="backgrond-setter">
+
+ <!-- <div class="backgrond-setter">
     <div class="container">
         <h2>Transactions at your fingertips</h2>
         <h3 class="tagline">Banking Made Easy</h3>
       
-        <!-- Transaction Services Section -->
         <div class="row">
             <div class="col-md-6">
                 <div class="transaction-box blue-box">
@@ -53,7 +53,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> 
 
     <div class="forms">
         <div *ngIf="showDeposit" class="form">
@@ -81,4 +81,166 @@
             </div>
         </div>
     </div>
-</div>
+    <button type="button" class="btn btn-secondary" (click)="navigateToCustomerPage()">
+        <i class="fa fa-arrow-left"></i> Back to Customer Page
+    </button>
+
+</div>  -->
+
+
+
+<!-- Side Bar Menu -->
+
+<nav class="mnb navbar navbar-default position-relative " style="margin-top: 5rem;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      </div>
+    </div>
+  </nav>
+  <!--msb: main sidebar-->
+  <!-- [class.msb-x]="isExpanded" -->
+  <div
+    class="msb"
+    id="msb"
+    
+    style="margin-top: 5.35rem; width: 17rem"
+  >
+    <nav class="navbar navbar-default" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <div class="brand-wrapper">
+          <!-- Brand -->
+          <div class="brand-name-wrapper">
+            <p class="navbar-brand" style="padding-top: 1rem; padding-left: 1rem; text-align: center;">
+              Transaction Menu
+            </p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Main Menu -->
+      <div class="side-menu-container" style="width: 22rem">
+        <ul class="nav navbar-nav w-100">
+          <li class="d-flex align-items-center menu-item" style="border-bottom: 1px solid #797979; width: 100%; padding-top: 1.5rem;">
+            <div class=" w-100" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <button class="button" style="width: 90%;" (click)="showDepositForm()">
+                    <i class="bi bi-currency-rupee"></i>
+                    Deposit
+                </button>
+                <p>Deposit money into your account</p>
+            </div>
+          </li>
+          <li class="d-flex align-items-center menu-item w-100" style="border-bottom: 1px solid #797979; padding-top: 5px;">
+            <div class="box w-100" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <button class="button" style="width: 90%;" (click)="showWithdrawForm()">
+                    <i class="bi bi-cash-stack"></i>
+                    Withdraw
+                </button>
+                <p>Withdraw money from your account</p>
+            </div>
+          </li>
+          <li class="d-flex align-items-center menu-item w-100w-100" style="border-bottom: 1px solid #797979; padding-top: 5px;">
+            <div class="box w-100" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <button class="button" style="width: 90%;" (click)="showTransferForm()">
+                    <i class="bi bi-arrow-right-circle-fill"></i>
+                    Transfer
+                </button>
+                <p>Transfer money to another account</p>
+            </div>
+          </li>
+          <li class="d-flex align-items-center menu-item w-100" style="border-bottom: 1px solid #797979; padding-top: 5px;">
+            <div class="box w-100" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <button class="button" style="width: 90%;" (click)="showTransactionHistory()">
+                    <i class="bi bi-clock-history"></i>
+                    Transaction History
+                </button>
+                <p>View your transaction history</p>
+            </div>
+          </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+  </div>
+  <!--main content wrapper-->
+  <div class="mcw">
+    <!--navigation here-->
+    <!--main content view-->
+    <div class="cv mt-3">
+      <div>
+        <div class="inbox">
+          <div class="inbox-sb"></div>
+          <div class="inbox-bx container-fluid">
+            <div class="row d-flex justify-content-center align-items-center">
+              <div class="col-md-10 overflow-y-auto">
+                <div class="container" style="background-color: #F5F7F9; border-radius: 1rem; border: 1px solid #e7e7e7;">
+                    <h2>Transactions at your fingertips</h2>
+                    <h3 style="margin-top: 1.5rem;">Banking Made Easy</h3>
+
+                    <div class="forms">
+                        <div *ngIf="showDeposit" class="" style=" width: 90%; height: 80%;">
+                            <div class="inner-form-box deposit-box">
+                                <h3><i class="bi bi-currency-rupee"></i> Deposit</h3>
+                                <div>
+                                    <label style="text-align: left; width: 100%;">
+                                        <p style="text-align: left; margin-bottom: -5px; ">Amount<sup style="color: pink;">*</sup></p>
+                                    </label>
+                                    <input style="width: 100%; border-radius: 0.5rem; padding: 5px;" type="number" [(ngModel)]="depositAmount" placeholder="Enter amount">    
+                                </div>
+                                <button class="inner-button" (click)="deposit()">Deposit</button>
+                            </div>
+                        </div>
+                    
+                        <div *ngIf="showWithdraw" class="" style=" width: 90%; height: 80%;">
+                            <div class="inner-form-box withdraw-box">
+                                <h3><i class="bi bi-cash-stack"></i> Withdraw</h3>
+                                <div>
+                                    <label style="text-align: left; width: 100%;">
+                                        <p style="text-align: left; margin-bottom: -5px; ">Amount<sup style="color: pink;">*</sup></p>
+                                    </label>
+                                    <input style="width: 100%; border-radius: 0.5rem; padding: 5px;" type="number" [(ngModel)]="withdrawAmount" placeholder="Enter amount">
+
+                                </div>
+                                <button class="inner-button" (click)="withdraw()">Withdraw</button>
+                            </div>
+                        </div>
+                    
+                        <div *ngIf="showTransfer" class="" style=" width: 80%; height: 80%;">
+                            <div class="inner-form-box transfer-box">
+                                <h3><i class="bi bi-arrow-right-circle-fill"></i> Transfer</h3>
+                                <div style="display: flex; flex-direction: column; gap: 5px;">
+                                    <div>
+                                        <label style="text-align: left; width: 100%;">
+                                            <p style="text-align: left; margin-bottom: -5px; ">Recopent Account ID<sup style="color: pink;">*</sup></p>
+                                        </label>
+                                        <input style="width: 100%; border-radius: 0.5rem; padding: 5px;" type="text" [(ngModel)]="transferAccountId" placeholder="Recipient Account ID">    
+                                    </div>
+                                    <div>
+                                        <label style="text-align: left; width: 100%;">
+                                            <p style="text-align: left; margin-bottom: -5px; ">Amount<sup style="color: pink;">*</sup></p>
+                                        </label>
+                                        <input style="width: 100%; border-radius: 0.5rem; padding: 5px;" type="number" [(ngModel)]="transferAmount" placeholder="Transfer Amount">    
+                                    </div>
+                                </div>
+                                <button class="inner-button" (click)="transfer()">Transfer</button>
+                            </div>
+                        </div>
+
+                        <div *ngIf="showHistory" class="inner-form-box transfer-box">
+                            <app-transaction-history [id]="accountId"/>
+                        </div>
+                    </div>
+                    <div type="button" class="btn btn-secondary" (click)="navigateToCustomerPage()">
+                        <i class="fa fa-arrow-left"></i> Back to Customer Page
+                    </div>
+                  <router-outlet class="w-100"></router-outlet>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

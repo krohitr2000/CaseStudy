@@ -4,6 +4,7 @@ import { AdminService } from '../admin-signin/admin-signin.service';
 import { TransactionHistoryDetails } from '../../account/transaction/transaction-history/transaction';
 import { CreatedAccountDetails } from '../../account/create-account/createdAccountDetails';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -11,15 +12,25 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
+  isExpanded = false;
+  
+  toggleMenu() {
+    this.isExpanded = !this.isExpanded;
+    console.log(this.isExpanded);
+    
+  }
+  
   employeeForm: FormGroup;
   transactions: TransactionHistoryDetails[] = [];
   accounts: CreatedAccountDetails[] = [];
   showAddEmployeePanel: boolean = false;
   showTransactionHistoryPanel: boolean = false;
   showAccountDetailsPanel: boolean = false; 
-employee: any;
+  employee: any;
+  adminId:number;
 
-  constructor(private fb: FormBuilder, private service: AdminService, private http: HttpClient) {
+  constructor(private fb: FormBuilder, private service: AdminService, private http: HttpClient, private route:ActivatedRoute) {
+    
     this.employeeForm = this.fb.group({
       username: ['', Validators.required],
       name: ['', Validators.required],
@@ -41,6 +52,7 @@ employee: any;
   }
 
   ngOnInit(): void {
+    this.adminId=this.route.snapshot.params['adminId']
     this.resetForm();
   }
 
