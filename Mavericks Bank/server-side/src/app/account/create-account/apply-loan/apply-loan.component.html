@@ -1,6 +1,7 @@
 
 <div class="container" *ngIf="authenticate()">
   <h2>Apply for a Loan</h2>
+  <p style="margin-bottom: 3rem;">(Fill the form with all necessary fields)</p>
   <form #loanForm="ngForm" (ngSubmit)="onSubmit(loanForm)">
     <div class="form-group">
       <label for="loanType">Loan Type:</label>
